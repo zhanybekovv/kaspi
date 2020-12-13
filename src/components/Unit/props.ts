@@ -12,3 +12,9 @@ export type Subdivision = {
   readonly id: string,
   readonly name: string
 }
+
+export type Employee = {
+  readonly id: number,
+  readonly divisionId: string,
+  readonly name: string
+}
