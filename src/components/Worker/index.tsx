@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect, FormEvent } from 'react'
 
 import { Props } from './props'
 import employeesData from '../../employees.json'
@@ -30,7 +30,7 @@ const Worker: FC<Props> = (props: Props) => {
     }
   }, [newEmployee])
 
-  const handleSubmit = (e:any, id:number) => {
+  const handleSubmit = (e:FormEvent<HTMLFormElement>, id:number) => {
     e.preventDefault()
     if(!value || value.length === 0){
       alert('Введите ФИО')
@@ -41,7 +41,7 @@ const Worker: FC<Props> = (props: Props) => {
     setEdit(!edit)
   }
 
-  const handleOnChange = (e: any) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value.trim())
   }
 

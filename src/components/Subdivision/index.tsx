@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react'
 import Worker from '../Worker'
 import { Props, Employee } from './props'
 import './index.css'
+import { FormEvent } from 'react'
 
 const Unit: FC<Props> = (props: Props) => {
   const { element } = props
@@ -16,7 +17,7 @@ const Unit: FC<Props> = (props: Props) => {
     setExpanded(!expanded)
   }
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
     if(!newEmployee || newEmployee.length === 0){
       alert('Введите ФИО')
     }
@@ -30,7 +31,7 @@ const Unit: FC<Props> = (props: Props) => {
     e.preventDefault()
   }
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewEmployee(event.target.value)
   }
 
