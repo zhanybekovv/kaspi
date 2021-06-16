@@ -23,7 +23,7 @@ const AutoSize = function AutoSize({
 
   useLayoutEffect(() => {
     const container = containerRef.current;
-    const resizeObserver = new ResizeObserver((entries) => {
+    const resizeObserver = new ResizeObserver((entries: any) => {
       const entry = entries[0];
       setWidth(entry.contentRect.width);
       setHeight(entry.contentRect.height);

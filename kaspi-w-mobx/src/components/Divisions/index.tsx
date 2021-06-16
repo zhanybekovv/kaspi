@@ -17,13 +17,7 @@ const Divisions: FC<Props> = (props: Props) => {
     console.log("size", divisions.length)
 		return(
 			<div style={{height: 500}}> 
-					<AutoSize>
-					{(size: any) => (<FixedSizeList height={size.height} itemCount={divisions.length} itemSize={50} width={size.width}>
-						{({index, style}) => (
-								<Subdivision key = {index} element={divisions[index]} style={style} />
-								)}
-					</FixedSizeList>) }
-					</AutoSize>
+						 {divisions.map(item => (<Subdivision  element={item} />))}
 			</div> 
 		)
 }

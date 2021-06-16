@@ -38,10 +38,10 @@ const Subdivision: FC<Props> = observer( function Subdivision(props: Props){
     <div style={style}>
       <div className='row'>
         <div className='heading' onClick={handleOnClick}>
-          {/* <button onClick={() => toggle()}>{expanded ? '-' : '+'}</button> */}
+          <button onClick={() => toggle()}>{expanded ? '-' : '+'}</button>
           <h3 style={{paddingRight: 8, paddingLeft: 8}}>{store.getDivision(element)?.name}</h3>
         </div>
-        {/* {expanded && <div style={{ padding: 20 }}>{showNodes()}</div>} */}
+        {expanded && <div style={{ padding: 20 }}>{showNodes()}</div>}
       </div>
     </div>
   )
